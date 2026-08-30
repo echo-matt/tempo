@@ -1,0 +1,34 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Screens" },
+    { "id": "page-2", "name": "System" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html",        "x": 0,    "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Home" },
+    { "file": "Library.dc.html",     "x": 470,  "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Your library" },
+    { "file": "Search.dc.html",      "x": 940,  "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Search" },
+    { "file": "AlbumPage.dc.html",   "x": 1410, "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Album" },
+    { "file": "NowPlaying.dc.html",  "x": 1880, "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Now playing" },
+    { "file": "Foundations.dc.html", "x": 0,    "y": 0, "w": 900, "h": 1620, "page": "page-2", "title": "Foundations" },
+    { "file": "Components.dc.html",  "x": 1000, "y": 0, "w": 900, "h": 1660, "page": "page-2", "title": "Components" }
+  ],
+  "annotations": [
+    {
+      "id": "brief",
+      "x": 0,
+      "y": -300,
+      "w": 460,
+      "page": "page-1",
+      "text": "Dark-first re-skin of Tempo, drafted against the real layouts.\n\nNear-black neutrals instead of the Material 3 baseline purple, Tempo's own coral #f24b6a as the one accent, rounded artwork, and a mini-player that lifts off the bottom edge.\n\nSame three-tab navigation, same fragments, same ViewPager2s underneath - this is a re-skin plus a re-layout, not a re-architecture."
+    },
+    {
+      "id": "open-questions",
+      "x": 1410,
+      "y": -300,
+      "w": 460,
+      "page": "page-1",
+      "text": "Two things left open:\n\nLight theme - the palette is specced on the System page, but no light screens are drawn yet.\n\nThe album header gradient is hand-picked here. In the app it would come from Palette on the loaded cover, with the neutral background as the fallback."
+    }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}

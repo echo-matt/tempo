@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 /.idea/
+
+# generated design canvas (rebuild with seed-canvas.mjs)
+mockup/redesign/tempo-redesign.html
