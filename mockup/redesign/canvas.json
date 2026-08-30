@@ -9,8 +9,8 @@
     { "file": "Search.dc.html",      "x": 940,  "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Search" },
     { "file": "AlbumPage.dc.html",   "x": 1410, "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Album" },
     { "file": "NowPlaying.dc.html",  "x": 1880, "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Now playing" },
-    { "file": "Foundations.dc.html", "x": 0,    "y": 0, "w": 900, "h": 1620, "page": "page-2", "title": "Foundations" },
-    { "file": "Components.dc.html",  "x": 1000, "y": 0, "w": 900, "h": 1660, "page": "page-2", "title": "Components" }
+    { "file": "Foundations.dc.html", "x": 0,    "y": 0, "w": 900, "h": 1820, "page": "page-2", "title": "Foundations" },
+    { "file": "Components.dc.html",  "x": 1000, "y": 0, "w": 900, "h": 1720, "page": "page-2", "title": "Components" }
   ],
   "annotations": [
     {
