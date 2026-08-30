@@ -37,3 +37,11 @@ jobs:
 
       - name: Assemble debug APK
         run: ./gradlew assembleTempoDebug --stacktrace
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: tempo-debug-${{ github.sha }}
+          path: app/build/outputs/apk/tempo/debug/*.apk
+          if-no-files-found: error
+          retention-days: 30
