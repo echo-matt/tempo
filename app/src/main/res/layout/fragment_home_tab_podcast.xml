@@ -38,7 +38,8 @@
                     android:paddingTop="16dp"
                     android:paddingEnd="16dp"
                     android:text="@string/home_subtitle_new_podcast_channel"
-                    android:textAllCaps="true" />
+                    android:textColor="?attr/colorPrimary"
+                android:textAllCaps="false" />
 
                 <!--  Label and button  -->
                 <LinearLayout
@@ -57,9 +58,12 @@
 
                     <TextView
                         android:id="@+id/podcast_channels_text_view_clickable"
-                        style="@style/TitleMedium"
+                        style="@style/LabelSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
                         android:paddingStart="8dp"
                         android:paddingTop="12dp"
                         android:paddingEnd="16dp"

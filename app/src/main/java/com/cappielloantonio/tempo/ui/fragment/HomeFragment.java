@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,9 +19,10 @@ import com.cappielloantonio.tempo.ui.fragment.pager.HomePager;
 import com.cappielloantonio.tempo.util.Preferences;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
+import java.util.Calendar;
 import java.util.Objects;
 
 @UnstableApi
@@ -31,7 +34,8 @@ public class HomeFragment extends Fragment {
 
     private MaterialToolbar materialToolbar;
     private AppBarLayout appBarLayout;
-    private TabLayout tabLayout;
+    private HorizontalScrollView chipScroll;
+    private ChipGroup chipGroup;
 
     @Nullable
     @Override
@@ -70,11 +74,23 @@ public class HomeFragment extends Fragment {
         activity.setSupportActionBar(materialToolbar);
         Objects.requireNonNull(materialToolbar.getOverflowIcon()).setTint(requireContext().getResources().getColor(R.color.titleTextColor, null));
 
-        tabLayout = new TabLayout(requireContext());
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        TextView title = bind.getRoot().findViewById(R.id.toolbar_title);
+        if (title != null) title.setText(greeting());
 
-        appBarLayout.addView(tabLayout);
+        chipScroll = (HorizontalScrollView) getLayoutInflater()
+                .inflate(R.layout.layout_home_tab_chips, appBarLayout, false);
+        chipGroup = chipScroll.findViewById(R.id.home_tab_chip_group);
+
+        appBarLayout.addView(chipScroll);
+    }
+
+    private int greeting() {
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
+        if (hour < 12) return R.string.home_greeting_morning;
+        if (hour < 18) return R.string.home_greeting_afternoon;
+
+        return R.string.home_greeting_evening;
     }
 
     private void initHomePager() {
@@ -92,13 +108,23 @@ public class HomeFragment extends Fragment {
         bind.homeViewPager.setOffscreenPageLimit(3);
         bind.homeViewPager.setUserInputEnabled(false);
 
-        new TabLayoutMediator(tabLayout, bind.homeViewPager,
-                (tab, position) -> {
-                    tab.setText(pager.getPageTitle(position));
-                    // tab.setIcon(pager.getPageIcon(position));
-                }
-        ).attach();
+        chipGroup.removeAllViews();
 
-        tabLayout.setVisibility(Preferences.isPodcastSectionVisible() || Preferences.isRadioSectionVisible() ? View.VISIBLE : View.GONE);
+        for (int position = 0; position < pager.getItemCount(); position++) {
+            Chip chip = (Chip) getLayoutInflater().inflate(R.layout.chip_home_tab, chipGroup, false);
+
+            // ChipGroup tracks single selection by child id, so each chip needs its own.
+            chip.setId(View.generateViewId());
+            chip.setText(pager.getPageTitle(position));
+
+            int page = position;
+            chip.setOnClickListener(v -> bind.homeViewPager.setCurrentItem(page, false));
+
+            chipGroup.addView(chip);
+
+            if (position == 0) chip.setChecked(true);
+        }
+
+        chipScroll.setVisibility(pager.getItemCount() > 1 ? View.VISIBLE : View.GONE);
     }
 }

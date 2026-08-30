@@ -28,7 +28,8 @@
                 android:paddingTop="16dp"
                 android:paddingEnd="16dp"
                 android:text="@string/home_subtitle_new_internet_radio_station"
-                android:textAllCaps="true" />
+                android:textColor="?attr/colorPrimary"
+                android:textAllCaps="false" />
 
             <TextView
                 android:id="@+id/internet_radio_station_title_text_view"

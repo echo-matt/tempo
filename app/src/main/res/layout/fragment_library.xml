@@ -89,9 +89,12 @@
 
                     <TextView
                         android:id="@+id/album_catalogue_text_view_clickable"
-                        style="@style/TitleMedium"
+                        style="@style/LabelSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:text="@string/library_title_album_see_all_button" />
@@ -143,9 +146,12 @@
 
                     <TextView
                         android:id="@+id/artist_catalogue_text_view_clickable"
-                        style="@style/TitleMedium"
+                        style="@style/LabelSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:text="@string/library_title_artist_see_all_button" />
@@ -197,9 +203,12 @@
 
                     <TextView
                         android:id="@+id/genre_catalogue_text_view_clickable"
-                        style="@style/TitleMedium"
+                        style="@style/LabelSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:text="@string/library_title_genre_see_all_button" />
@@ -248,9 +257,12 @@
 
                     <TextView
                         android:id="@+id/playlist_catalogue_text_view_clickable"
-                        style="@style/TitleMedium"
+                        style="@style/LabelSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:text="@string/library_title_playlist_see_all_button" />

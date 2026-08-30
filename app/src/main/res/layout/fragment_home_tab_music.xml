@@ -173,7 +173,7 @@
                 android:paddingTop="16dp"
                 android:paddingEnd="16dp"
                 android:text="@string/home_subtitle_made_for_you"
-                android:textAllCaps="true" />
+                android:textAllCaps="false" />
 
             <TextView
                 android:id="@+id/similar_tracks_text_view_refreshable"
@@ -215,7 +215,7 @@
                 android:paddingTop="16dp"
                 android:paddingEnd="16dp"
                 android:text="@string/home_subtitle_best_of"
-                android:textAllCaps="true" />
+                android:textAllCaps="false" />
 
             <TextView
                 android:id="@+id/best_of_artist_text_view_refreshable"
@@ -299,7 +299,8 @@
                 android:paddingTop="16dp"
                 android:paddingEnd="16dp"
                 android:text="@string/home_title_last_week"
-                android:textAllCaps="true" />
+                android:textColor="?attr/colorPrimary"
+                android:textAllCaps="false" />
 
             <TextView
                 android:id="@+id/grid_tracks_text_view"
@@ -363,10 +364,13 @@
 
                 <TextView
                     android:id="@+id/starred_tracks_text_view_clickable"
-                    style="@style/TitleMedium"
+                    style="@style/LabelSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
+                    android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
+                        android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:text="@string/home_title_starred_tracks_see_all_button" />
             </LinearLayout>
@@ -412,10 +416,13 @@
 
                 <TextView
                     android:id="@+id/starred_albums_text_view_clickable"
-                    style="@style/TitleMedium"
+                    style="@style/LabelSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
+                    android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
+                        android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:text="@string/home_title_starred_albums_see_all_button" />
             </LinearLayout>
@@ -461,10 +468,13 @@
 
                 <TextView
                     android:id="@+id/starred_artists_text_view_clickable"
-                    style="@style/TitleMedium"
+                    style="@style/LabelSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
+                    android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
+                        android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:text="@string/home_title_starred_artists_see_all_button" />
             </LinearLayout>
@@ -591,10 +601,13 @@
 
                 <TextView
                     android:id="@+id/most_played_albums_text_view_clickable"
-                    style="@style/TitleMedium"
+                    style="@style/LabelSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
+                    android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
+                        android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:text="@string/home_title_most_played_see_all_button" />
             </LinearLayout>
@@ -644,10 +657,13 @@
 
                 <TextView
                     android:id="@+id/recently_played_albums_text_view_clickable"
-                    style="@style/TitleMedium"
+                    style="@style/LabelSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
+                    android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
+                        android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:text="@string/home_title_last_played_see_all_button" />
 
@@ -698,10 +714,13 @@
 
                 <TextView
                     android:id="@+id/recently_added_albums_text_view_clickable"
-                    style="@style/TitleMedium"
+                    style="@style/LabelSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
+                    android:drawablePadding="2dp"
+                        android:gravity="center_vertical"
+                        app:drawableEndCompat="@drawable/ic_chevron_right"
+                        android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:text="@string/home_title_recently_added_see_all_button" />
 

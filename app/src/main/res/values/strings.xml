@@ -168,6 +168,9 @@
     <string name="menu_group_by_track">Track</string>
     <string name="menu_group_by_year">Year</string>
     <string name="menu_home_label">Home</string>
+    <string name="home_greeting_morning">Good morning</string>
+    <string name="home_greeting_afternoon">Good afternoon</string>
+    <string name="home_greeting_evening">Good evening</string>
     <string name="menu_last_week_name">Last week</string>
     <string name="menu_last_month_name">Last month</string>
     <string name="menu_last_year_name">Last year</string>
