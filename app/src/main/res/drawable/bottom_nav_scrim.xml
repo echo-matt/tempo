@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  The navigation bar sits over scrolling content, so it needs a ground of its own:
+  solid under the labels, fading out at the top edge so artwork passes behind it
+  rather than stopping at a hard line.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="90"
+        android:centerColor="@color/navScrimColor"
+        android:endColor="@color/navScrimColorTransparent"
+        android:startColor="@color/navScrimColor"
+        android:type="linear" />
+</shape>
