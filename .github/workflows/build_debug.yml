@@ -38,6 +38,13 @@ jobs:
       - name: Assemble debug APK
         run: ./gradlew assembleTempoDebug --stacktrace
 
+      - name: Report APK identity
+        run: |
+          AAPT=$(ls -d "$ANDROID_HOME"/build-tools/*/aapt2 | tail -n 1)
+          APK=$(ls app/build/outputs/apk/tempo/debug/*.apk | head -n 1)
+          echo "APK: $APK"
+          "$AAPT" dump packagename "$APK"
+
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:
