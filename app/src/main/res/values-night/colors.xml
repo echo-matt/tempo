@@ -8,7 +8,7 @@
     <color name="playerProgressTrackColor">#3A3A43</color>
     <color name="navItemInactiveColor">#8E8E97</color>
     <color name="navScrimColor">#0C0C0F</color>
-    <color name="navScrimColorTransparent">#000C0C0F</color>
+    <color name="navScrimColorTransparent">#E60C0C0F</color>
     <color name="pageHeaderGradientStart">#23232B</color>
     <color name="pageHeaderGradientEnd">#000C0C0F</color>
 

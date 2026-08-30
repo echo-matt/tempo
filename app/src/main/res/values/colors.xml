@@ -76,7 +76,7 @@
     <!-- Bottom navigation: the accent carries selection, so the resting state is quiet. -->
     <color name="navItemInactiveColor">#77777F</color>
     <color name="navScrimColor">#FFFFFF</color>
-    <color name="navScrimColorTransparent">#00FFFFFF</color>
+    <color name="navScrimColorTransparent">#E6FFFFFF</color>
     <color name="pageHeaderGradientStart">#F1F1F4</color>
     <color name="pageHeaderGradientEnd">#00FFFFFF</color>
 

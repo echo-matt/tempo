@@ -6,6 +6,8 @@
     android:layout_height="wrap_content"
     android:checkable="true"
     android:textAppearance="?attr/textAppearanceLabelLarge"
+    android:textColor="@color/chip_home_tab_text"
+    app:chipBackgroundColor="@color/chip_home_tab_background"
     app:checkedIconVisible="false"
     app:chipStrokeWidth="0dp"
     app:ensureMinTouchTargetSize="true" />

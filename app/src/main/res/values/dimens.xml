@@ -10,7 +10,7 @@
     <dimen name="bottom_sheet_peek_height">60dp</dimen>
     <dimen name="player_card_inset">8dp</dimen>
     <dimen name="player_card_radius">12dp</dimen>
-    <dimen name="player_progress_height">2dp</dimen>
+    <dimen name="player_progress_height">3dp</dimen>
     <dimen name="bottom_nav_height">76dp</dimen>
 
     <dimen name="now_playing_bottom_peek_height">64dp</dimen>

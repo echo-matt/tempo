@@ -12,8 +12,9 @@
         android:layout_width="@dimen/album_cover_size"
         android:layout_height="72dp"
         android:layout_gravity="center"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="2dp"
+        card_view:cardBackgroundColor="?attr/colorSurfaceVariant"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardElevation="0dp"
         card_view:cardPreventCornerOverlap="false"
         card_view:cardUseCompatPadding="true">
 
