@@ -26,6 +26,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/album_info_sector"
+                android:background="@drawable/bg_page_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
@@ -212,6 +213,7 @@
                         app:iconPadding="18dp" />
 
                     <Button
+                        style="?attr/materialButtonOutlinedStyle"
                         android:id="@+id/album_page_shuffle_button"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"

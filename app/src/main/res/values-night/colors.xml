@@ -9,6 +9,8 @@
     <color name="navItemInactiveColor">#8E8E97</color>
     <color name="navScrimColor">#0C0C0F</color>
     <color name="navScrimColorTransparent">#000C0C0F</color>
+    <color name="pageHeaderGradientStart">#23232B</color>
+    <color name="pageHeaderGradientEnd">#000C0C0F</color>
 
     <color name="lyricsTextColor">#F2F2F3</color>
     <color name="shadowsLyricsTextColor">#606060</color>

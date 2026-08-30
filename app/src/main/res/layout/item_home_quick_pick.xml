@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Compact two-per-row shortcut tile: cover flush to the leading edge, one line of text.
+-->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_margin="4dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/quick_pick_cover_image_view"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/quick_pick_name_label"
+            style="@style/LabelMedium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:paddingStart="10dp"
+            android:paddingEnd="8dp"
+            android:textSize="13sp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

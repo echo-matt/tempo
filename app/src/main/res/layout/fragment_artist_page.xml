@@ -71,6 +71,7 @@
                 android:paddingBottom="4dp">
 
                 <Button
+                        style="?attr/materialButtonOutlinedStyle"
                     android:id="@+id/artist_page_shuffle_button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

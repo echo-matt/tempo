@@ -41,6 +41,7 @@ import com.cappielloantonio.tempo.subsonic.models.Child;
 import com.cappielloantonio.tempo.subsonic.models.Share;
 import com.cappielloantonio.tempo.ui.activity.MainActivity;
 import com.cappielloantonio.tempo.ui.adapter.AlbumAdapter;
+import com.cappielloantonio.tempo.ui.adapter.QuickPickAdapter;
 import com.cappielloantonio.tempo.ui.adapter.AlbumHorizontalAdapter;
 import com.cappielloantonio.tempo.ui.adapter.ArtistAdapter;
 import com.cappielloantonio.tempo.ui.adapter.ArtistHorizontalAdapter;
@@ -84,6 +85,7 @@ public class HomeTabMusicFragment extends Fragment implements ClickCallback {
     private ArtistHorizontalAdapter starredArtistAdapter;
     private AlbumAdapter recentlyAddedAlbumAdapter;
     private AlbumAdapter recentlyPlayedAlbumAdapter;
+    private QuickPickAdapter quickPickAdapter;
     private AlbumAdapter mostPlayedAlbumAdapter;
     private AlbumHorizontalAdapter newReleasesAlbumAdapter;
     private YearAdapter yearAdapter;
@@ -635,16 +637,29 @@ public class HomeTabMusicFragment extends Fragment implements ClickCallback {
         bind.recentlyPlayedAlbumsRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
         bind.recentlyPlayedAlbumsRecyclerView.setHasFixedSize(true);
 
+        // The quick-pick grid is the head of this same list, so it rides the one feed.
+        bind.quickPickRecyclerView.setLayoutManager(new GridLayoutManager(requireContext(), 2));
+        bind.quickPickRecyclerView.setHasFixedSize(true);
+
+        quickPickAdapter = new QuickPickAdapter(this);
+        bind.quickPickRecyclerView.setAdapter(quickPickAdapter);
+
         recentlyPlayedAlbumAdapter = new AlbumAdapter(this);
         bind.recentlyPlayedAlbumsRecyclerView.setAdapter(recentlyPlayedAlbumAdapter);
         homeViewModel.getRecentlyPlayedAlbumList(getViewLifecycleOwner()).observe(getViewLifecycleOwner(), albums -> {
             if (albums == null) {
-                if (bind != null) bind.homeRecentlyPlayedAlbumsSector.setVisibility(View.GONE);
+                if (bind != null) {
+                    bind.homeRecentlyPlayedAlbumsSector.setVisibility(View.GONE);
+                    bind.homeQuickPickSector.setVisibility(View.GONE);
+                }
             } else {
-                if (bind != null)
+                if (bind != null) {
                     bind.homeRecentlyPlayedAlbumsSector.setVisibility(!albums.isEmpty() ? View.VISIBLE : View.GONE);
+                    bind.homeQuickPickSector.setVisibility(!albums.isEmpty() ? View.VISIBLE : View.GONE);
+                }
 
                 recentlyPlayedAlbumAdapter.setItems(albums);
+                quickPickAdapter.setItems(albums);
             }
         });
 

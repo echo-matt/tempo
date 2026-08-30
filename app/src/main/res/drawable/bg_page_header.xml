@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Lifts the top of a detail page away from the page ground so the artwork sits
+  in a header rather than floating on a flat field. Neutral for now; sampling the
+  cover with Palette would key it to the artwork.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:endColor="@color/pageHeaderGradientEnd"
+        android:startColor="@color/pageHeaderGradientStart"
+        android:type="linear" />
+</shape>
