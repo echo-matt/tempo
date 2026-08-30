@@ -9,15 +9,11 @@
 <helmet>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
   <style>
-    :root{
-      --bg:#0C0C0F; --elev:#17171B; --surf:#1E1E23; --surf-hi:#2A2A31;
-      --line:#26262C; --tx:#F2F2F3; --tx-dim:#9A9AA2; --tx-faint:#6E6E77;
-      --accent:#f24b6a; --on-accent:#12070A;
-    }
+    :root{--bg:#0C0C0F;--surf:#1E1E23;--raised:#24242B;--tx:#F2F2F3;--dim:#9A9AA2;
+          --faint:#6E6E77;--accent:#f24b6a;}
     *{box-sizing:border-box;}
     body{margin:0;background:var(--bg);color:var(--tx);
-      font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;
-      -webkit-font-smoothing:antialiased;}
+      font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
     a{color:var(--accent);text-decoration:none;} a:hover{color:#ff6b84;}
     .art{border-radius:8px;position:relative;overflow:hidden;flex:none;}
     .art::after{content:'';position:absolute;inset:0;
@@ -28,153 +24,119 @@
     .a4{background-image:linear-gradient(135deg,#1b2f4d,#2f6d8f 58%,#7fc4c9);}
     .a5{background-image:linear-gradient(145deg,#2a2438,#5c4a7d 55%,#a487c9);}
     .a6{background-image:linear-gradient(160deg,#4a3312,#8a5b1e 55%,#d9a441);}
-    .a7{background-image:linear-gradient(140deg,#123033,#2c6f66 60%,#9ad0b0);}
-    .ttl{font-size:15px;font-weight:500;letter-spacing:-.01em;line-height:1.3;
+    .shead{display:flex;align-items:center;gap:8px;padding:0 16px 10px;}
+    .stitle{font-size:19px;font-weight:700;letter-spacing:-.02em;flex-grow:1;}
+    .saction{font-size:13px;font-weight:600;color:var(--dim);display:flex;align-items:center;gap:2px;flex:none;}
+    .ssub{font-size:13px;font-weight:500;color:var(--dim);padding:0 16px 3px;}
+    .ssub.act{color:var(--accent);}
+    .sect{padding-top:24px;}
+    .carou{display:flex;gap:12px;padding-left:16px;overflow:hidden;}
+    .cardt{font-size:15px;font-weight:500;letter-spacing:-.01em;margin-top:8px;
       overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-    .sub{font-size:13px;font-weight:400;color:var(--tx-dim);line-height:1.3;
+    .cards{font-size:13px;color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .prow{display:flex;align-items:center;gap:12px;height:64px;padding:0 16px;}
+    .prowt{font-size:15px;font-weight:500;letter-spacing:-.01em;
       overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-    .sect{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:0;}
+    .prows{font-size:13px;color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .dots{display:flex;gap:5px;justify-content:center;padding-top:10px;}
+    .dot{width:5px;height:5px;border-radius:999px;background:#3A3A43;}
+    .dot.on{background:var(--accent);}
   </style>
 </helmet>
 
-<div style="width:390px;height:844px;overflow:hidden;position:relative;background:#0C0C0F;--accent:{{accent}}">
-
-  <!-- content -->
+<div style="width:390px;height:2260px;overflow:hidden;position:relative;background:#0C0C0F;">
   <div style="position:absolute;inset:0;overflow:hidden;">
-
-    <!-- status bar inset, intentionally empty -->
     <div style="height:48px"></div>
-
-    <!-- greeting + actions -->
     <div style="display:flex;align-items:center;gap:12px;padding:0 16px;height:52px;">
       <div style="font-size:22px;font-weight:700;letter-spacing:-.025em;flex-grow:1;">Good evening</div>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F2F2F3" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="#F2F2F3"><circle cx="12" cy="5" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="19" r="1.7"/></svg>
     </div>
-
-    <!-- source chips (Music / Podcasts / Radio) -->
-    <div style="display:flex;gap:8px;padding:6px 16px 12px;">
+    <div style="display:flex;gap:8px;padding:6px 16px 4px;">
       <div style="height:34px;padding:0 16px;border-radius:999px;display:flex;align-items:center;font-size:13px;font-weight:600;background:var(--accent);color:#12070A;">Music</div>
-      <div style="height:34px;padding:0 16px;border-radius:999px;display:flex;align-items:center;font-size:13px;font-weight:500;background:#1E1E23;color:#F2F2F3;">Podcasts</div>
-      <div style="height:34px;padding:0 16px;border-radius:999px;display:flex;align-items:center;font-size:13px;font-weight:500;background:#1E1E23;color:#F2F2F3;">Radio</div>
+      <div style="height:34px;padding:0 16px;border-radius:999px;display:flex;align-items:center;font-size:13px;font-weight:500;background:var(--surf);">Podcast</div>
+      <div style="height:34px;padding:0 16px;border-radius:999px;display:flex;align-items:center;font-size:13px;font-weight:500;background:var(--surf);">Radio</div>
     </div>
-
-    <!-- quick picks -->
-    <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:8px;padding:0 16px;">
-      <div style="display:flex;align-items:center;gap:10px;height:56px;background:#1E1E23;border-radius:6px;overflow:hidden;">
-        <div style="width:56px;height:56px;flex:none;border-radius:0;background:linear-gradient(140deg,#f24b6a,#7b2b52);position:relative;display:flex;align-items:center;justify-content:center;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 20.5 4.2 13a4.9 4.9 0 0 1 7-6.9l.8.8.8-.8a4.9 4.9 0 0 1 7 6.9Z"/></svg>
+    <div class="sect">
+      <div class="shead"><div class="stitle">Jump back in</div></div>
+      <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:8px;padding:0 16px;">
+        <div style="display:flex;align-items:center;gap:10px;height:56px;background:var(--surf);border-radius:6px;overflow:hidden;">
+          <div class="art a1" style="width:56px;height:56px;border-radius:0;"></div>
+          <div style="font-size:13px;font-weight:600;padding-right:8px;line-height:1.2;">Low Ceiling</div></div>
+        <div style="display:flex;align-items:center;gap:10px;height:56px;background:var(--surf);border-radius:6px;overflow:hidden;">
+          <div class="art a4" style="width:56px;height:56px;border-radius:0;"></div>
+          <div style="font-size:13px;font-weight:600;padding-right:8px;line-height:1.2;">Held Note</div></div>
+        <div style="display:flex;align-items:center;gap:10px;height:56px;background:var(--surf);border-radius:6px;overflow:hidden;">
+          <div class="art a6" style="width:56px;height:56px;border-radius:0;"></div>
+          <div style="font-size:13px;font-weight:600;padding-right:8px;line-height:1.2;">Marble Arch</div></div>
+        <div style="display:flex;align-items:center;gap:10px;height:56px;background:var(--surf);border-radius:6px;overflow:hidden;">
+          <div class="art a2" style="width:56px;height:56px;border-radius:0;"></div>
+          <div style="font-size:13px;font-weight:600;padding-right:8px;line-height:1.2;">Kite Season</div></div>
+      </div>
+    </div>
+    <div class="sect">
+      <div class="shead"><div class="stitle">Discovery</div><div class="saction">Shuffle all</div></div>
+      <div style="margin:0 16px;height:196px;border-radius:10px;overflow:hidden;position:relative;">
+        <div class="art a3" style="position:absolute;inset:0;border-radius:0;"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;height:60%;
+          background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0));"></div>
+        <div style="position:absolute;left:16px;right:16px;bottom:14px;">
+          <div style="font-size:21px;font-weight:700;letter-spacing:-.02em;">Anchor Light</div>
+          <div style="font-size:13px;color:#D6D6DA;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Low Ceiling</div>
         </div>
-        <div style="font-size:13.5px;font-weight:600;padding-right:8px;line-height:1.2;">Starred</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;height:56px;background:#1E1E23;border-radius:6px;overflow:hidden;">
-        <div class="art a4" style="width:56px;height:56px;border-radius:0;"></div>
-        <div style="font-size:13.5px;font-weight:600;padding-right:8px;line-height:1.2;">Held Note</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;height:56px;background:#1E1E23;border-radius:6px;overflow:hidden;">
-        <div class="art a6" style="width:56px;height:56px;border-radius:0;"></div>
-        <div style="font-size:13.5px;font-weight:600;padding-right:8px;line-height:1.2;">Marble Arch</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;height:56px;background:#1E1E23;border-radius:6px;overflow:hidden;">
-        <div class="art a2" style="width:56px;height:56px;border-radius:0;"></div>
-        <div style="font-size:13.5px;font-weight:600;padding-right:8px;line-height:1.2;">Kite Season</div>
       </div>
     </div>
-
-    <!-- Made for you -->
-    <div style="display:flex;align-items:center;padding:26px 16px 12px;gap:8px;">
-      <h2 class="sect" style="flex-grow:1;">Made for you</h2>
-      <div style="font-size:12px;font-weight:600;color:var(--tx-dim);letter-spacing:.02em;">Shuffle all</div>
-    </div>
-    <div style="display:flex;gap:12px;padding-left:16px;overflow:hidden;">
-      <div style="width:148px;flex:none;">
-        <div class="art a1" style="width:148px;height:148px;"></div>
-        <div class="ttl" style="margin-top:8px;">Low Ceiling</div>
-        <div class="sub">Vera Sound</div>
-      </div>
-      <div style="width:148px;flex:none;">
-        <div class="art a3" style="width:148px;height:148px;"></div>
-        <div class="ttl" style="margin-top:8px;">Paper Radio</div>
-        <div class="sub">The Halving</div>
-      </div>
-      <div style="width:148px;flex:none;">
-        <div class="art a5" style="width:148px;height:148px;"></div>
-        <div class="ttl" style="margin-top:8px;">Nightpost</div>
-        <div class="sub">Dorian Ames</div>
+    <div class="sect">
+      <div class="ssub">Start mix from a song you liked</div>
+      <div class="shead"><div class="stitle">Made for you</div></div>
+      <div class="carou">
+        <div style="width:148px;flex:none;"><div class="art a1" style="width:148px;height:148px;"></div><div class="cardt">Low Ceiling</div><div class="cards">Vera Sound</div></div>
+        <div style="width:148px;flex:none;"><div class="art a5" style="width:148px;height:148px;"></div><div class="cardt">Nightpost</div><div class="cards">Dorian Ames</div></div>
+        <div style="width:148px;flex:none;"><div class="art a2" style="width:148px;height:148px;"></div><div class="cardt">Kite Season</div><div class="cards">Kite Season</div></div>
       </div>
     </div>
-
-    <!-- Recently played (clipped by the player, as when scrolled) -->
-    <div style="display:flex;align-items:center;padding:26px 16px 12px;gap:8px;">
-      <h2 class="sect" style="flex-grow:1;">Recently played</h2>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9A9AA2" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>
-    </div>
-    <div style="display:flex;gap:12px;padding-left:16px;overflow:hidden;">
-      <div style="width:148px;flex:none;">
-        <div class="art a7" style="width:148px;height:148px;"></div>
-        <div class="ttl" style="margin-top:8px;">Slow Harbour</div>
-        <div class="sub">Nell Ashby</div>
-      </div>
-      <div style="width:148px;flex:none;">
-        <div class="art a2" style="width:148px;height:148px;"></div>
-        <div class="ttl" style="margin-top:8px;">Kite Season</div>
-        <div class="sub">Kite Season</div>
-      </div>
-      <div style="width:148px;flex:none;">
-        <div class="art a6" style="width:148px;height:148px;"></div>
-        <div class="ttl" style="margin-top:8px;">Marble Arch</div>
-        <div class="sub">Vera Sound</div>
+    <div class="sect">
+      <div class="ssub">Top songs of your favorite artists</div>
+      <div class="shead"><div class="stitle">Best of</div></div>
+      <div class="carou">
+        <div style="width:132px;flex:none;text-align:center;"><div class="art a4" style="width:132px;height:132px;border-radius:999px;"></div><div class="cardt">Nell Ashby</div><div class="cards">Artist</div></div>
+        <div style="width:132px;flex:none;text-align:center;"><div class="art a3" style="width:132px;height:132px;border-radius:999px;"></div><div class="cardt">The Halving</div><div class="cards">Artist</div></div>
+        <div style="width:132px;flex:none;text-align:center;"><div class="art a6" style="width:132px;height:132px;border-radius:999px;"></div><div class="cardt">Vera Sound</div><div class="cards">Artist</div></div>
       </div>
     </div>
+    <div class="sect">
+      <div class="shead"><div class="stitle">Radio stations</div></div>
+      <div class="carou">
+        <div style="width:132px;flex:none;text-align:center;"><div class="art a2" style="width:132px;height:132px;border-radius:999px;"></div><div class="cardt">Kite Season</div><div class="cards">Radio</div></div>
+        <div style="width:132px;flex:none;text-align:center;"><div class="art a5" style="width:132px;height:132px;border-radius:999px;"></div><div class="cardt">Dorian Ames</div><div class="cards">Radio</div></div>
+        <div style="width:132px;flex:none;text-align:center;"><div class="art a1" style="width:132px;height:132px;border-radius:999px;"></div><div class="cardt">Vera Sound</div><div class="cards">Radio</div></div>
+      </div>
+    </div>
+    <div class="sect">
+      <div class="ssub act">Last week</div>
+      <div class="shead"><div class="stitle">Your top songs</div></div>
+      <div class="prow"><div class="art a1" style="width:52px;height:52px;border-radius:6px;"></div><div style="flex-grow:1;min-width:0;"><div class="prowt">Anchor Light</div><div class="prows">Vera Sound &middot; 4:02</div></div><svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+      <div class="prow"><div class="art a3" style="width:52px;height:52px;border-radius:6px;"></div><div style="flex-grow:1;min-width:0;"><div class="prowt">Paper Radio</div><div class="prows">The Halving &middot; 3:18</div></div><svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+      <div class="prow"><div class="art a5" style="width:52px;height:52px;border-radius:6px;"></div><div style="flex-grow:1;min-width:0;"><div class="prowt">Second Storey</div><div class="prows">Dorian Ames &middot; 5:41</div></div><svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+      <div class="dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+    <div class="sect">
+      <div class="shead"><div class="stitle">&#9733; Starred tracks</div><div class="saction">See all<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9A9AA2" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></div></div>
+      <div class="prow"><div class="art a2" style="width:52px;height:52px;border-radius:6px;"></div><div style="flex-grow:1;min-width:0;"><div class="prowt">Kite Season</div><div class="prows">Kite Season &middot; 4:41</div></div><svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+      <div class="prow"><div class="art a4" style="width:52px;height:52px;border-radius:6px;"></div><div style="flex-grow:1;min-width:0;"><div class="prowt">Winter Tenants</div><div class="prows">Nell Ashby &middot; 3:55</div></div><svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+      <div class="prow"><div class="art a6" style="width:52px;height:52px;border-radius:6px;"></div><div style="flex-grow:1;min-width:0;"><div class="prowt">Marble Arch</div><div class="prows">Vera Sound &middot; 4:27</div></div><svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+      <div class="dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+    <div class="sect">
+      <div class="shead"><div class="stitle">&#9733; Starred albums</div><div class="saction">See all<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9A9AA2" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></div></div>
+      <div class="prow"><div class="art a1" style="width:52px;height:52px;border-radius:6px;"></div><div style="flex-grow:1;min-width:0;"><div class="prowt">Low Ceiling</div><div class="prows">Vera Sound</div></div><svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+      <div class="prow"><div class="art a5" style="width:52px;height:52px;border-radius:6px;"></div><div style="flex-grow:1;min-width:0;"><div class="prowt">Nightpost</div><div class="prows">Dorian Ames</div></div><svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+      <div class="prow"><div class="art a3" style="width:52px;height:52px;border-radius:6px;"></div><div style="flex-grow:1;min-width:0;"><div class="prowt">Paper Radio</div><div class="prows">The Halving</div></div><svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+      <div class="dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+    <div style="height:40px"></div>
   </div>
-
-  <!-- bottom scrim -->
-  <div style="position:absolute;left:0;right:0;bottom:0;height:190px;pointer-events:none;
-    background:linear-gradient(to top,#0C0C0F 42%,rgba(12,12,15,.92) 62%,rgba(12,12,15,0));"></div>
-
-  <!-- mini player -->
-  <div style="position:absolute;left:8px;right:8px;bottom:76px;height:60px;background:#24242B;border-radius:12px;
-    display:flex;align-items:center;gap:10px;padding:0 10px;overflow:hidden;
-    box-shadow:0 8px 24px rgba(0,0,0,.45);">
-    <div class="art a1" style="width:42px;height:42px;border-radius:5px;"></div>
-    <div style="flex-grow:1;min-width:0;">
-      <div style="font-size:13.5px;font-weight:600;letter-spacing:-.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Anchor Light</div>
-      <div style="font-size:12px;color:#9A9AA2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Vera Sound</div>
-    </div>
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2F2F3" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5 4.2 13a4.9 4.9 0 0 1 7-6.9l.8.8.8-.8a4.9 4.9 0 0 1 7 6.9Z"/></svg>
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="#F2F2F3"><rect x="6.5" y="5" width="3.6" height="14" rx="1.1"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.1"/></svg>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="#F2F2F3"><path d="M5 5.5v13l9.5-6.5Z"/><rect x="16.5" y="5.5" width="2.6" height="13" rx="1.1"/></svg>
-    <!-- progress hairline -->
-    <div style="position:absolute;left:0;right:0;bottom:0;height:2px;background:#3A3A43;">
-      <div style="width:37%;height:2px;background:var(--accent);"></div>
-    </div>
-  </div>
-
-  <!-- bottom navigation -->
-  <div style="position:absolute;left:0;right:0;bottom:0;height:76px;display:grid;
-    grid-template-columns:repeat(3, minmax(0, 1fr));padding:8px 24px 0;">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f24b6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.4 12 3.6l8.5 6.8V20a1 1 0 0 1-1 1h-4.6v-6H9.1v6H4.5a1 1 0 0 1-1-1Z" fill="rgba(242,75,106,.16)"/></svg>
-      <div style="font-size:10.5px;font-weight:600;color:var(--accent);">Home</div>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8E8E97" stroke-width="2" stroke-linecap="round"><path d="M4 10v4M8.5 6.5v11M13 3.5v17M17.5 8v8M21 10.5v3"/></svg>
-      <div style="font-size:10.5px;font-weight:500;color:#8E8E97;">Library</div>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:5px;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8E8E97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11m0 0 4-4m-4 4-4-4M4 18.5h16"/></svg>
-      <div style="font-size:10.5px;font-weight:500;color:#8E8E97;">Downloads</div>
-    </div>
-  </div>
-
 </div>
 </x-dc>
-<script data-dc-script data-props='{"accent":{"editor":"color","default":"#f24b6a","options":["#f24b6a","#1ed760","#7c5cff","#f5a623"]}}'>
-class Component extends DCLogic {
-  renderVals() {
-    return { accent: this.props.accent ?? '#f24b6a' };
-  }
-}
-</script>
 </body>
 </html>

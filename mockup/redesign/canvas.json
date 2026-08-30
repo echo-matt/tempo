@@ -4,30 +4,38 @@
     { "id": "page-2", "name": "System" }
   ],
   "artboards": [
-    { "file": "Main.dc.html",        "x": 0,    "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Home" },
-    { "file": "Library.dc.html",     "x": 470,  "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Your library" },
-    { "file": "Search.dc.html",      "x": 940,  "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Search" },
-    { "file": "AlbumPage.dc.html",   "x": 1410, "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Album" },
-    { "file": "NowPlaying.dc.html",  "x": 1880, "y": 0, "w": 390, "h": 844, "page": "page-1", "title": "Now playing" },
-    { "file": "Foundations.dc.html", "x": 0,    "y": 0, "w": 900, "h": 1820, "page": "page-2", "title": "Foundations" },
-    { "file": "Components.dc.html",  "x": 1000, "y": 0, "w": 900, "h": 1720, "page": "page-2", "title": "Components" }
+    { "file": "Main.dc.html",           "x": 0,    "y": 0, "w": 390, "h": 2260, "page": "page-1", "title": "Home" },
+    { "file": "HomeContinued.dc.html",  "x": 470,  "y": 0, "w": 390, "h": 2180, "page": "page-1", "title": "Home, continued" },
+    { "file": "Library.dc.html",        "x": 940,  "y": 0, "w": 390, "h": 1500, "page": "page-1", "title": "Library" },
+    { "file": "AlbumPage.dc.html",      "x": 1410, "y": 0, "w": 390, "h": 844,  "page": "page-1", "title": "Album" },
+    { "file": "NowPlaying.dc.html",     "x": 1880, "y": 0, "w": 390, "h": 844,  "page": "page-1", "title": "Now playing" },
+    { "file": "Foundations.dc.html",    "x": 0,    "y": 0, "w": 900, "h": 1820, "page": "page-2", "title": "Foundations" },
+    { "file": "Components.dc.html",     "x": 1000, "y": 0, "w": 900, "h": 1720, "page": "page-2", "title": "Patterns" }
   ],
   "annotations": [
     {
-      "id": "brief",
+      "id": "why-redrawn",
       "x": 0,
-      "y": -300,
-      "w": 460,
+      "y": -320,
+      "w": 470,
       "page": "page-1",
-      "text": "Dark-first re-skin of Tempo, drafted against the real layouts.\n\nNear-black neutrals instead of the Material 3 baseline purple, Tempo's own coral #f24b6a as the one accent, rounded artwork, and a mini-player that lifts off the bottom edge.\n\nSame three-tab navigation, same fragments, same ViewPager2s underneath - this is a re-skin plus a re-layout, not a re-architecture."
+      "text": "Redrawn against the running app.\n\nThe first version of this canvas showed two home sections. The app renders sixteen, in three different list shapes, driven by what the Subsonic server returns and what is enabled in settings. So it was a design for a different app, and implementing it faithfully could never have matched.\n\nEvery section here is one that exists, under its real label, in its real order and its real shape."
     },
     {
-      "id": "open-questions",
-      "x": 1410,
-      "y": -300,
-      "w": 460,
+      "id": "content-not-design",
+      "x": 940,
+      "y": -320,
+      "w": 470,
       "page": "page-1",
-      "text": "Two things left open:\n\nLight theme - the palette is specced on the System page, but no light screens are drawn yet.\n\nThe album header gradient is hand-picked here. In the app it would come from Palette on the loaded cover, with the neutral background as the fallback."
+      "text": "Density is content, not design.\n\nThese artboards show two or three items per section because that reads well at this size. On a small library a section may hold one item, or be hidden entirely - most sectors disappear when their feed comes back empty, and several can be turned off in settings.\n\nThe design has to survive one item as well as twenty."
+    },
+    {
+      "id": "not-drawn",
+      "x": 1410,
+      "y": -320,
+      "w": 470,
+      "page": "page-1",
+      "text": "Not drawn here: Search, and the podcast and radio tabs.\n\nSearch uses Material's SearchBar and SearchView, which bring their own structure - restyling it is a separate exercise from these scroll screens. The podcast and radio tabs reuse the same patterns on the Patterns sheet.\n\nThe earlier canvas had a Search screen that owed nothing to the real one. It has been removed rather than left to mislead."
     }
   ],
   "launch": { "view": "canvas", "page": "page-1" }
