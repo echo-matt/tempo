@@ -313,12 +313,12 @@ object Preferences {
 
     @JvmStatic
     fun isCornerRoundingEnabled(): Boolean {
-        return App.getInstance().preferences.getBoolean(ROUNDED_CORNER, false)
+        return App.getInstance().preferences.getBoolean(ROUNDED_CORNER, true)
     }
 
     @JvmStatic
     fun getRoundedCornerSize(): Int {
-        return App.getInstance().preferences.getString(ROUNDED_CORNER_SIZE, "12")!!.toInt()
+        return App.getInstance().preferences.getString(ROUNDED_CORNER_SIZE, "18")!!.toInt()
     }
 
     @JvmStatic

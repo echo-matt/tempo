@@ -43,7 +43,7 @@
             android:key="rounded_corner" />
 
         <ListPreference
-            app:defaultValue="6"
+            app:defaultValue="18"
             app:dialogTitle="@string/settings_rounded_corner_size"
             app:entries="@array/rounded_corner_size_titles"
             app:entryValues="@array/rounded_corner_size_values"

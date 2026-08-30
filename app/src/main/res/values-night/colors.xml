@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="titleTextColor">#DADADA</color>
-    <color name="subtitleTextColor">#9B9B9B</color>
-    <color name="dividerColor">#404040</color>
+    <color name="titleTextColor">#F2F2F3</color>
+    <color name="subtitleTextColor">#9A9AA2</color>
+    <color name="dividerColor">#26262C</color>
 
-    <color name="lyricsTextColor">#DADADA</color>
+    <color name="playerSurfaceColor">#24242B</color>
+    <color name="playerProgressTrackColor">#3A3A43</color>
+    <color name="navItemInactiveColor">#8E8E97</color>
+
+    <color name="lyricsTextColor">#F2F2F3</color>
     <color name="shadowsLyricsTextColor">#606060</color>
 
-    <color name="searchPlaceholderColor">#CFCFCF</color>
-    <color name="searchColor">#DADADA</color>
+    <color name="searchPlaceholderColor">#9A9AA2</color>
+    <color name="searchColor">#F2F2F3</color>
 </resources>
-

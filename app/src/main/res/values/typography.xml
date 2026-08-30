@@ -9,25 +9,29 @@
         <item name="android:textSize">26sp</item>
         <item name="android:textFontWeight">700</item>
         <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:letterSpacing">-0.03</item>
     </style>
 
     <style name="HeadlineMedium" parent="InterFontFamily">
         <item name="android:textSize">24sp</item>
         <item name="android:textFontWeight">700</item>
         <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:letterSpacing">-0.03</item>
     </style>
 
     <style name="HeadlineSmall" parent="InterFontFamily">
         <item name="android:textSize">22sp</item>
         <item name="android:textFontWeight">700</item>
         <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:letterSpacing">-0.025</item>
     </style>
 
 
     <style name="TitleLarge" parent="InterFontFamily">
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">19sp</item>
         <item name="android:textFontWeight">700</item>
         <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:letterSpacing">-0.02</item>
     </style>
 
     <style name="TitleMedium" parent="InterFontFamily">
@@ -47,22 +51,25 @@
         <item name="android:textSize">22sp</item>
         <item name="android:textFontWeight">700</item>
         <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:letterSpacing">-0.025</item>
     </style>
 
     <style name="LabelLarge" parent="InterFontFamily">
         <item name="android:textSize">18sp</item>
         <item name="android:textFontWeight">700</item>
         <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:letterSpacing">-0.02</item>
     </style>
 
     <style name="LabelMedium" parent="InterFontFamily">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textFontWeight">500</item>
         <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:letterSpacing">-0.01</item>
     </style>
 
     <style name="LabelSmall" parent="InterFontFamily">
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:textFontWeight">400</item>
         <item name="android:textColor">@color/subtitleTextColor</item>
     </style>
@@ -78,6 +85,7 @@
         <item name="android:textSize">24sp</item>
         <item name="android:textFontWeight">700</item>
         <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:letterSpacing">-0.03</item>
     </style>
 
     <style name="BodyMedium" parent="InterFontFamily">

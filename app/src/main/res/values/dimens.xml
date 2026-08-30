@@ -1,11 +1,27 @@
 <resources>
     <dimen name="appbar_header_height">296dp</dimen>
     <dimen name="activity_margin_content">24dp</dimen>
-    <dimen name="bottom_sheet_behavior_peek_height">136dp</dimen>
-    <dimen name="bottom_sheet_peek_height">56dp</dimen>
+
+    <!--
+      The mini player floats: it is inset from the screen edges and sits above the
+      navigation bar, so the sheet's peek height is the card plus the nav plus the inset.
+    -->
+    <dimen name="bottom_sheet_behavior_peek_height">144dp</dimen>
+    <dimen name="bottom_sheet_peek_height">60dp</dimen>
+    <dimen name="player_card_inset">8dp</dimen>
+    <dimen name="player_card_radius">12dp</dimen>
+    <dimen name="player_progress_height">2dp</dimen>
+    <dimen name="bottom_nav_height">76dp</dimen>
+
     <dimen name="now_playing_bottom_peek_height">64dp</dimen>
-    <dimen name="global_padding_bottom">164dp</dimen>
+    <dimen name="global_padding_bottom">168dp</dimen>
+
+    <!-- Radius of the page-indicator dots, not of artwork: artwork corners are a
+         Glide transform driven by the rounded_corner_size preference. -->
     <dimen name="radius">2dp</dimen>
     <dimen name="dots_height">2dp</dimen>
     <dimen name="downloaded_item_padding">12dp</dimen>
+
+    <!-- Three covers peek at this size instead of two. -->
+    <dimen name="album_cover_size">148dp</dimen>
 </resources>

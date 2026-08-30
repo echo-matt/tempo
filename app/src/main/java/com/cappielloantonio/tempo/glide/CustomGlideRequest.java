@@ -13,6 +13,7 @@ import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
@@ -45,13 +46,18 @@ public class CustomGlideRequest {
     }
 
     public static RequestOptions createRequestOptions(Context context, String item, ResourceType type) {
-        return new RequestOptions()
+        RequestOptions options = new RequestOptions()
                 .placeholder(new ColorDrawable(SurfaceColors.SURFACE_5.getColor(context)))
                 .fallback(getPlaceholder(context, type))
                 .error(getPlaceholder(context, type))
                 .diskCacheStrategy(DEFAULT_DISK_CACHE_STRATEGY)
-                .signature(new ObjectKey(item != null ? item : 0))
-                .transform(new CenterCrop(), new RoundedCorners(CustomGlideRequest.CORNER_RADIUS));
+                .signature(new ObjectKey(item != null ? item : 0));
+
+        // Artists are circular so the two catalogues stay distinguishable while scrolling;
+        // every other kind of artwork keeps the rounded square.
+        return type == ResourceType.Artist
+                ? options.transform(new CenterCrop(), new CircleCrop())
+                : options.transform(new CenterCrop(), new RoundedCorners(CustomGlideRequest.CORNER_RADIUS));
     }
 
     @Nullable

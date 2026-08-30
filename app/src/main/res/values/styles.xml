@@ -51,4 +51,24 @@
         <item name="background">?attr/colorErrorContainer</item>
         <item name="android:textColor">?attr/colorOnErrorContainer</item>
     </style>
+
+    <!--
+      The accent tint on icon and label carries selection, so the Material pill
+      indicator is turned off rather than competing with it.
+    -->
+    <style name="Widget.Tempo.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/bottom_nav_item</item>
+        <item name="itemTextColor">@color/bottom_nav_item</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.Tempo.BottomNavigationView.ActiveIndicator</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- Deliberately parentless: this style only has to zero the indicator out, and
+         inheriting nothing keeps it independent of the Material style catalogue. -->
+    <style name="Widget.Tempo.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@android:color/transparent</item>
+        <item name="android:width">0dp</item>
+        <item name="android:height">0dp</item>
+    </style>
 </resources>

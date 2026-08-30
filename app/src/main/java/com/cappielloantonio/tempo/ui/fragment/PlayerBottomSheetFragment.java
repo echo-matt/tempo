@@ -33,7 +33,6 @@ import com.cappielloantonio.tempo.util.Constants;
 import com.cappielloantonio.tempo.util.MusicUtil;
 import com.cappielloantonio.tempo.util.Preferences;
 import com.cappielloantonio.tempo.viewmodel.PlayerBottomSheetViewModel;
-import com.google.android.material.elevation.SurfaceColors;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 
@@ -58,7 +57,6 @@ public class PlayerBottomSheetFragment extends Fragment {
 
         playerBottomSheetViewModel = new ViewModelProvider(requireActivity()).get(PlayerBottomSheetViewModel.class);
 
-        customizeBottomSheetBackground();
         customizeBottomSheetAction();
         initViewPager();
         setHeaderBookmarksButton();
@@ -84,10 +82,6 @@ public class PlayerBottomSheetFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         bind = null;
-    }
-
-    private void customizeBottomSheetBackground() {
-        bind.playerHeaderLayout.getRoot().setBackgroundColor(SurfaceColors.getColorForElevation(requireContext(), 8));
     }
 
     private void customizeBottomSheetAction() {
