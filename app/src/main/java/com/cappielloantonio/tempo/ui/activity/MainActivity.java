@@ -60,7 +60,12 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SplashScreen.installSplashScreen(this);
-        DynamicColors.applyToActivityIfAvailable(this);
+        // Material You overlays a wallpaper-derived scheme over every colour token,
+        // which replaces Tempo's own palette wholesale. Opt-in, so the app's identity
+        // is what ships by default.
+        if (Preferences.isDynamicColorsEnabled()) {
+            DynamicColors.applyToActivityIfAvailable(this);
+        }
 
         super.onCreate(savedInstanceState);
 

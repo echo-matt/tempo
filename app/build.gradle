@@ -45,6 +45,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            // Distinct application id so a debug build installs alongside a release
+            // install instead of being refused for a signing-key mismatch.
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-debug'
+        }
+
         release {
             shrinkResources true
             minifyEnabled true
