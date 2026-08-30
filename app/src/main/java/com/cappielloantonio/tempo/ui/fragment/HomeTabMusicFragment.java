@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -413,6 +414,17 @@ public class HomeTabMusicFragment extends Fragment implements ClickCallback {
         artistRadioSnapHelper.attachToRecyclerView(bind.radioArtistRecyclerView);
     }
 
+    /**
+     * The accent as the current theme resolves it, for canvas-drawn decorations that
+     * cannot reference a theme attribute directly.
+     */
+    private int accentColor() {
+        TypedValue value = new TypedValue();
+        requireContext().getTheme().resolveAttribute(com.google.android.material.R.attr.colorPrimary, value, true);
+
+        return value.data;
+    }
+
     private void initTopSongsView() {
         if (homeViewModel.checkHomeSectorVisibility(Constants.HOME_SECTOR_TOP_SONGS)) return;
 
@@ -446,8 +458,8 @@ public class HomeTabMusicFragment extends Fragment implements ClickCallback {
                         getResources().getDimensionPixelSize(R.dimen.radius),
                         getResources().getDimensionPixelSize(R.dimen.radius) * 4,
                         getResources().getDimensionPixelSize(R.dimen.dots_height),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null))
+                        requireContext().getResources().getColor(R.color.dotsInactiveColor, null),
+                        accentColor())
         );
     }
 
@@ -479,8 +491,8 @@ public class HomeTabMusicFragment extends Fragment implements ClickCallback {
                         getResources().getDimensionPixelSize(R.dimen.radius),
                         getResources().getDimensionPixelSize(R.dimen.radius) * 4,
                         getResources().getDimensionPixelSize(R.dimen.dots_height),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null))
+                        requireContext().getResources().getColor(R.color.dotsInactiveColor, null),
+                        accentColor())
         );
     }
 
@@ -512,8 +524,8 @@ public class HomeTabMusicFragment extends Fragment implements ClickCallback {
                         getResources().getDimensionPixelSize(R.dimen.radius),
                         getResources().getDimensionPixelSize(R.dimen.radius) * 4,
                         getResources().getDimensionPixelSize(R.dimen.dots_height),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null))
+                        requireContext().getResources().getColor(R.color.dotsInactiveColor, null),
+                        accentColor())
         );
     }
 
@@ -547,8 +559,8 @@ public class HomeTabMusicFragment extends Fragment implements ClickCallback {
                         getResources().getDimensionPixelSize(R.dimen.radius),
                         getResources().getDimensionPixelSize(R.dimen.radius) * 4,
                         getResources().getDimensionPixelSize(R.dimen.dots_height),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null))
+                        requireContext().getResources().getColor(R.color.dotsInactiveColor, null),
+                        accentColor())
         );
     }
 
@@ -580,8 +592,8 @@ public class HomeTabMusicFragment extends Fragment implements ClickCallback {
                         getResources().getDimensionPixelSize(R.dimen.radius),
                         getResources().getDimensionPixelSize(R.dimen.radius) * 4,
                         getResources().getDimensionPixelSize(R.dimen.dots_height),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null))
+                        requireContext().getResources().getColor(R.color.dotsInactiveColor, null),
+                        accentColor())
         );
     }
 
@@ -740,8 +752,8 @@ public class HomeTabMusicFragment extends Fragment implements ClickCallback {
                         getResources().getDimensionPixelSize(R.dimen.radius),
                         getResources().getDimensionPixelSize(R.dimen.radius) * 4,
                         getResources().getDimensionPixelSize(R.dimen.dots_height),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null),
-                        requireContext().getResources().getColor(R.color.titleTextColor, null))
+                        requireContext().getResources().getColor(R.color.dotsInactiveColor, null),
+                        accentColor())
         );
     }
 

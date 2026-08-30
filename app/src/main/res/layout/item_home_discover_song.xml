@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+  The caption sits at the foot of the cover over a scrim rather than floating at
+  the top of the artwork.
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,34 +12,37 @@
         android:layout_width="match_parent"
         android:layout_height="196dp"
         android:background="?attr/colorSurfaceContainerHighest"
-        android:foreground="@drawable/gradient_discover_background_image" />
-
-    <TextView
-        android:id="@+id/title_discover_song_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginRight="16dp"
-        android:ellipsize="end"
-        android:fontFamily="@font/inter"
-        android:maxLines="2"
-        android:textColor="@color/gradientTitleColor"
-        android:textFontWeight="400"
-        android:textSize="20sp" />
+        android:foreground="@drawable/gradient_discover_background_image"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/album_discover_song_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title_discover_song_label"
+        android:layout_alignBottom="@id/discover_song_cover_image_view"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginBottom="14dp"
         android:drawablePadding="10dp"
         android:ellipsize="end"
         android:fontFamily="@font/inter"
         android:maxLines="1"
         android:textColor="@color/gradientSubtitleColor"
         android:textFontWeight="400"
-        android:textSize="14sp" />
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/title_discover_song_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/album_discover_song_label"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter"
+        android:letterSpacing="-0.02"
+        android:maxLines="2"
+        android:textColor="@color/gradientTitleColor"
+        android:textFontWeight="700"
+        android:textSize="21sp" />
 </RelativeLayout>

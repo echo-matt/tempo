@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+  Scrim under the Discovery caption. It rises from the foot of the cover so the
+  text is legible whatever the artwork does; a side-to-side wash left the title
+  fighting busy covers.
+-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
-        android:angle="180"
+        android:angle="90"
+        android:centerColor="#66000000"
         android:dither="true"
-        android:endColor="#80000000"
-        android:startColor="#00000000" />
+        android:endColor="#00000000"
+        android:startColor="#E0000000" />
 </shape>

@@ -25,6 +25,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.cappielloantonio.tempo.R;
+import com.google.android.material.button.MaterialButton;
 import com.cappielloantonio.tempo.databinding.InnerFragmentPlayerControllerBinding;
 import com.cappielloantonio.tempo.service.MediaService;
 import com.cappielloantonio.tempo.ui.activity.MainActivity;
@@ -56,7 +57,7 @@ public class PlayerControllerFragment extends Fragment {
     private Chip playerMediaExtension;
     private TextView playerMediaBitrate;
     private ConstraintLayout playerQuickActionView;
-    private ImageButton playerOpenQueueButton;
+    private MaterialButton playerOpenQueueButton;
     private ImageButton playerTrackInfo;
 
     private MainActivity activity;

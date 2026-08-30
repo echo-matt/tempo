@@ -5,8 +5,8 @@
     android:background="?attr/selectableItemBackground"
     android:clipChildren="false"
     android:orientation="horizontal"
-    android:paddingTop="2dp"
-    android:paddingBottom="2dp">
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
 
     <ImageView
         android:id="@+id/album_cover_image_view"
