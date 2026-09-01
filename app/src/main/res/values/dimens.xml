@@ -24,4 +24,6 @@
 
     <!-- Three covers peek at this size instead of two. -->
     <dimen name="album_cover_size">148dp</dimen>
+    <!-- Circles read larger than squares at the same width, so artists sit a step down. -->
+    <dimen name="artist_cover_size">132dp</dimen>
 </resources>

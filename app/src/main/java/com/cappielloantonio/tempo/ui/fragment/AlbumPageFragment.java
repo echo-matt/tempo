@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,6 +26,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.cappielloantonio.tempo.R;
 import com.cappielloantonio.tempo.databinding.FragmentAlbumPageBinding;
 import com.cappielloantonio.tempo.glide.CustomGlideRequest;
+import com.cappielloantonio.tempo.helper.PaletteHelper;
 import com.cappielloantonio.tempo.interfaces.ClickCallback;
 import com.cappielloantonio.tempo.model.Download;
 import com.cappielloantonio.tempo.service.MediaManager;
@@ -223,9 +225,20 @@ public class AlbumPageFragment extends Fragment implements ClickCallback {
         albumPageViewModel.getAlbum().observe(getViewLifecycleOwner(), album -> {
             if (bind != null && album != null) {
                 CustomGlideRequest.Builder.from(requireContext(), album.getCoverArtId(), CustomGlideRequest.ResourceType.Album).build().into(bind.albumCoverImageView);
+
+                PaletteHelper.applyHeaderWash(bind.albumInfoSector, album.getCoverArtId(), pageGround());
             }
         });
     }
+
+    /** The page colour the header wash resolves down to. */
+    private int pageGround() {
+        TypedValue value = new TypedValue();
+        requireContext().getTheme().resolveAttribute(android.R.attr.colorBackground, value, true);
+
+        return value.data;
+    }
+
 
     private void initSongsView() {
         albumPageViewModel.getAlbum().observe(getViewLifecycleOwner(), album -> {

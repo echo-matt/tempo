@@ -2,6 +2,7 @@ package com.cappielloantonio.tempo.ui.fragment;
 
 import android.content.ComponentName;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.cappielloantonio.tempo.R;
+import com.cappielloantonio.tempo.helper.PaletteHelper;
 import com.google.android.material.button.MaterialButton;
 import com.cappielloantonio.tempo.databinding.InnerFragmentPlayerControllerBinding;
 import com.cappielloantonio.tempo.service.MediaService;
@@ -278,9 +280,19 @@ public class PlayerControllerFragment extends Fragment {
         });
     }
 
+    /** The page colour the header wash resolves down to. */
+    private int pageGround() {
+        TypedValue value = new TypedValue();
+        requireContext().getTheme().resolveAttribute(android.R.attr.colorBackground, value, true);
+
+        return value.data;
+    }
+
     private void initMediaListenable() {
         playerBottomSheetViewModel.getLiveMedia().observe(getViewLifecycleOwner(), media -> {
             if (media != null) {
+                PaletteHelper.applyHeaderWash(bind.getRoot(), media.getCoverArtId(), pageGround());
+
                 buttonFavorite.setChecked(media.getStarred() != null);
                 buttonFavorite.setOnClickListener(v -> playerBottomSheetViewModel.setFavorite(requireContext(), media));
                 buttonFavorite.setOnLongClickListener(v -> {
