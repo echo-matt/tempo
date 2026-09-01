@@ -1,16 +1,87 @@
 {
   "pages": [
-    { "id": "page-1", "name": "Screens" },
-    { "id": "page-2", "name": "System" }
+    {
+      "id": "page-1",
+      "name": "Screens"
+    },
+    {
+      "id": "page-2",
+      "name": "System"
+    }
   ],
   "artboards": [
-    { "file": "Main.dc.html",           "x": 0,    "y": 0, "w": 390, "h": 2260, "page": "page-1", "title": "Home" },
-    { "file": "HomeContinued.dc.html",  "x": 470,  "y": 0, "w": 390, "h": 2180, "page": "page-1", "title": "Home, continued" },
-    { "file": "Library.dc.html",        "x": 940,  "y": 0, "w": 390, "h": 1500, "page": "page-1", "title": "Library" },
-    { "file": "AlbumPage.dc.html",      "x": 1410, "y": 0, "w": 390, "h": 844,  "page": "page-1", "title": "Album" },
-    { "file": "NowPlaying.dc.html",     "x": 1880, "y": 0, "w": 390, "h": 844,  "page": "page-1", "title": "Now playing" },
-    { "file": "Foundations.dc.html",    "x": 0,    "y": 0, "w": 900, "h": 1820, "page": "page-2", "title": "Foundations" },
-    { "file": "Components.dc.html",     "x": 1000, "y": 0, "w": 900, "h": 1720, "page": "page-2", "title": "Patterns" }
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 2260,
+      "page": "page-1",
+      "title": "Home"
+    },
+    {
+      "file": "HomeContinued.dc.html",
+      "x": 470,
+      "y": 0,
+      "w": 390,
+      "h": 2180,
+      "page": "page-1",
+      "title": "Home, continued"
+    },
+    {
+      "file": "Library.dc.html",
+      "x": 940,
+      "y": 0,
+      "w": 390,
+      "h": 1500,
+      "page": "page-1",
+      "title": "Library"
+    },
+    {
+      "file": "Search.dc.html",
+      "x": 1410,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "page": "page-1",
+      "title": "Search"
+    },
+    {
+      "file": "AlbumPage.dc.html",
+      "x": 1880,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "page": "page-1",
+      "title": "Album"
+    },
+    {
+      "file": "NowPlaying.dc.html",
+      "x": 2350,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "page": "page-1",
+      "title": "Now playing"
+    },
+    {
+      "file": "Foundations.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 900,
+      "h": 1820,
+      "page": "page-2",
+      "title": "Foundations"
+    },
+    {
+      "file": "Components.dc.html",
+      "x": 1000,
+      "y": 0,
+      "w": 900,
+      "h": 1720,
+      "page": "page-2",
+      "title": "Patterns"
+    }
   ],
   "annotations": [
     {
@@ -31,12 +102,15 @@
     },
     {
       "id": "not-drawn",
-      "x": 1410,
+      "x": 1880,
       "y": -320,
       "w": 470,
       "page": "page-1",
-      "text": "Not drawn here: Search, and the podcast and radio tabs.\n\nSearch uses Material's SearchBar and SearchView, which bring their own structure - restyling it is a separate exercise from these scroll screens. The podcast and radio tabs reuse the same patterns on the Patterns sheet.\n\nThe earlier canvas had a Search screen that owed nothing to the real one. It has been removed rather than left to mislead."
+      "text": "Search is drawn from what the screen really is: Material's SearchBar over three result lists.\n\nIt needed almost nothing new - the section headings already share the home and library heading style, and the result rows are the same rows those screens use. Only the field itself moved, in to the page gutter.\n\nThe podcast and radio tabs are not drawn separately: both are vertical row lists built from the same pieces, on the Patterns sheet."
     }
   ],
-  "launch": { "view": "canvas", "page": "page-1" }
+  "launch": {
+    "view": "canvas",
+    "page": "page-1"
+  }
 }

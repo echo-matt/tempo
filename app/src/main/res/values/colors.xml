@@ -74,7 +74,7 @@
     <color name="playerSurfaceColor">#F4F4F6</color>
     <color name="playerProgressTrackColor">#D8D8DE</color>
     <!-- Bottom navigation: the accent carries selection, so the resting state is quiet. -->
-    <color name="navItemInactiveColor">#77777F</color>
+    <color name="navItemInactiveColor">#70707A</color>
     <color name="navScrimColor">#FFFFFF</color>
     <color name="navScrimColorTransparent">#E6FFFFFF</color>
     <color name="dotsInactiveColor">#D0D0D6</color>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <style>
+    :root{--bg:#0C0C0F;--surf:#1E1E23;--raised:#24242B;--tx:#F2F2F3;--dim:#9A9AA2;--faint:#6E6E77;--accent:#f24b6a;}
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--bg);color:var(--tx);
+      font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
+    a{color:var(--accent);text-decoration:none;} a:hover{color:#ff6b84;}
+    .art{border-radius:6px;position:relative;overflow:hidden;flex:none;}
+    .art::after{content:'';position:absolute;inset:0;
+      background:radial-gradient(circle at 28% 22%,rgba(255,255,255,.15),transparent 46%);}
+    .a1{background-image:linear-gradient(142deg,#3b2f6e,#7b3f6b 55%,#c05a58);}
+    .a2{background-image:linear-gradient(152deg,#0f4c46,#1f7a5c 58%,#8fbf6a);}
+    .a3{background-image:linear-gradient(158deg,#5a2230,#a33f45 52%,#e08a5a);}
+    .a4{background-image:linear-gradient(135deg,#1b2f4d,#2f6d8f 58%,#7fc4c9);}
+    .a5{background-image:linear-gradient(145deg,#2a2438,#5c4a7d 55%,#a487c9);}
+    .shead{padding:0 16px 10px;font-size:19px;font-weight:700;letter-spacing:-.02em;}
+    .sect{padding-top:24px;}
+    .prow{display:flex;align-items:center;gap:12px;height:64px;padding:0 16px;}
+    .prowt{font-size:15px;font-weight:500;letter-spacing:-.01em;
+      overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .prows{font-size:13px;color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  </style>
+</helmet>
+
+<div style="width:390px;height:844px;overflow:hidden;position:relative;background:#0C0C0F;">
+  <div style="position:absolute;inset:0;overflow:hidden;">
+    <div style="height:48px"></div>
+
+    <!-- Material's SearchBar, inset to the page gutter like every other field -->
+    <div style="margin:8px 16px;height:52px;border-radius:999px;background:var(--surf);
+      display:flex;align-items:center;gap:12px;padding:0 18px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#9A9AA2" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      <div style="font-size:15px;color:#8B8B94;flex-grow:1;">Search your library</div>
+    </div>
+
+    <div class="sect">
+      <div class="shead">Artists</div>
+      <div class="prow">
+        <div class="art a4" style="width:52px;height:52px;border-radius:999px;"></div>
+        <div style="flex-grow:1;min-width:0;"><div class="prowt">Nell Ashby</div>
+          <div class="prows">Artist</div></div>
+      </div>
+      <div class="prow">
+        <div class="art a5" style="width:52px;height:52px;border-radius:999px;"></div>
+        <div style="flex-grow:1;min-width:0;"><div class="prowt">The Halving</div>
+          <div class="prows">Artist</div></div>
+      </div>
+    </div>
+
+    <div class="sect">
+      <div class="shead">Albums</div>
+      <div class="prow">
+        <div class="art a1" style="width:52px;height:52px;"></div>
+        <div style="flex-grow:1;min-width:0;"><div class="prowt">Low Ceiling</div>
+          <div class="prows">Vera Sound &middot; 2021</div></div>
+      </div>
+      <div class="prow">
+        <div class="art a3" style="width:52px;height:52px;"></div>
+        <div style="flex-grow:1;min-width:0;"><div class="prowt">Paper Radio</div>
+          <div class="prows">The Halving &middot; 2019</div></div>
+      </div>
+    </div>
+
+    <div class="sect">
+      <div class="shead">Songs</div>
+      <div class="prow">
+        <div class="art a1" style="width:52px;height:52px;"></div>
+        <div style="flex-grow:1;min-width:0;"><div class="prowt">Anchor Light</div>
+          <div class="prows">Vera Sound &middot; 4:02</div></div>
+        <svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg>
+      </div>
+      <div class="prow">
+        <div class="art a2" style="width:52px;height:52px;"></div>
+        <div style="flex-grow:1;min-width:0;"><div class="prowt">Kite Season</div>
+          <div class="prows">Kite Season &middot; 4:41</div></div>
+        <svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="#6E6E77"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
